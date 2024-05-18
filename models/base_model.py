@@ -8,7 +8,7 @@ class BaseModel:
     def __init__(self):
         """Initializes a new instance of BaseModel"""
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
+        self.created_at = datetime.utcnow()
         self.updated_at = self.created_at
 
     def __str__(self):
@@ -18,7 +18,7 @@ class BaseModel:
 
     def save(self):
         """updates the public instance attribute"""
-        self.update_at = datetime.now()
+        self.update_at = datetime.utcnow()
 
     def to_dict(self):
         dict_rep = self.__dict__.copy()
