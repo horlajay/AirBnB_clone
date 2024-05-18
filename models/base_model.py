@@ -17,7 +17,7 @@ class BaseModel:
 
     def save(self):
         """updates the public instance attribute"""
-        safe.update_at = datetime.now()
+        self.update_at = datetime.now()
 
     def to_dict(self):
         dict_representation = self.__dict__.copy()
