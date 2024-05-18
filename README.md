@@ -1,4 +1,4 @@
-Airbnb Clone
+AirBnB_clone
 
 
 Introduction
