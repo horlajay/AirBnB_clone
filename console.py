@@ -49,12 +49,9 @@ def parse_curly_braces(argument):
             return f"{identifier}", f"{attr_name} {attr_value}"
 
 
-<<<<<<< HEAD
 
 class HBNBCommand(cmd.Cmd):
-=======
-class HBNBCommandInterpreter(cmd.Cmd):
->>>>>>> 3a889c5944529d576b30b3045c0911959e5dbd71
+
     """
     Command interpreter class for HBNB
     """
