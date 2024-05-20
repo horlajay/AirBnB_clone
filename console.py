@@ -49,14 +49,14 @@ def parse_curly_braces(argument):
             return f"{identifier}", f"{attr_name} {attr_value}"
 
 
-
 class HBNBCommand(cmd.Cmd):
 
     """
     Command interpreter class for HBNB
     """
     prompt = "(hbnb) "
-    available_classes = ["BaseModel", "User", "Amenity", "Place", "Review", "State", "City"]
+    available_classes = ["BaseModel", "User", "Amenity",
+                         "Place", "Review", "State", "City"]
 
     def emptyline(self):
         """
@@ -155,7 +155,8 @@ class HBNBCommand(cmd.Cmd):
         if not tokens:
             print("** class name missing **")
         elif tokens[0] in self.available_classes:
-            count = sum(1 for obj in storage.all().values() if obj.__class__.__name__ == tokens[0])
+            count = sum(1 for obj in storage.all().values()
+                        if obj.__class__.__name__ == tokens[0])
             print(count)
         else:
             print("** class doesn't exist **")
@@ -186,7 +187,8 @@ class HBNBCommand(cmd.Cmd):
                 if curly_content:
                     try:
                         dict_content = curly_content.group(1)
-                        parsed_dict = ast.literal_eval("{" + dict_content + "}")
+                        parsed_dict = ast.literal_eval("{"
+                                                        + dict_content + "}")
                         for key, value in parsed_dict.items():
                             setattr(obj, key, value)
                     except Exception:
@@ -213,7 +215,8 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in self.available_classes:
             print("** class doesn't exist **")
             return False
-        method_name, args = method_call.split('(')[0], method_call.split('(')[1].split(')')[0]
+        method_name = method_call.split('(')[0]
+        args = method_call.split('(')[1].split(')')[0]
         if method_name == "all":
             self.do_all(class_name)
         elif method_name == "count":
