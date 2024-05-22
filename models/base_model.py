@@ -30,7 +30,7 @@ class BaseModel:
             self.created_at = datetime.utcnow()
             self.updated_at = self.created_at
 
-        models.storage.new(self)
+        models.storage.add(self)
 
     def __str__(self):
         """Returns a string representation of the instance"""
@@ -40,7 +40,7 @@ class BaseModel:
     def save(self):
         """updates the public instance attribute"""
         self.update_at = datetime.utcnow()
-        models.storage.save()
+        models.storage.save_to_file()
 
     def to_dict(self):
         """
