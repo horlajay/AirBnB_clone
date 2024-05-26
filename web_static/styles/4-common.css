@@ -3,11 +3,14 @@ body {
     padding: 0;
     color: #484848;
     font-size: 14px;
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.content {
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
     flex: 1;
 }

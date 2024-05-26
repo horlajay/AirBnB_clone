@@ -1,0 +1,17 @@
+header {
+    color: white;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    position: relative;
+}
+.logo {
+    background: url('../images/logo.png') no-repeat center;
+    background-size: contain; /* Ensure the logo fits within the div */
+    height: 50px; /* Adjust according to your logo's dimensions */
+    width: 100px;  /* Adjust according to your logo's dimensions */
+    position: absolute;
+    top: 10px; /* Adjust for vertical spacing */
+    left: 20px; /* 20px space from the left edge */
+    bottom: 10px;
+}
